@@ -1,10 +1,11 @@
-import odinImage from "./odin-lined.png"
-import "./styles.css";
-import {greeting} from "./greeting.js";
+import './styles.css';
+import AppController from './appController.js';
+import renderSidebar from './domContent.js';
 
-const image = document.createElement("img");
-image.src = odinImage;
+document.addEventListener("DOMContentLoaded", () => {
 
-document.body.appendChild(image);
+AppController.init();
 
-console.log(greeting);
+const projects = AppController.getProjects();
+renderSidebar(projects);
+})
